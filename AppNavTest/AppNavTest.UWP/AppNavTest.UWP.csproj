@@ -150,8 +150,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Octane.Xam.VideoPlayer.UWP">
-      <HintPath>..\..\packages\Octane.Xam.VideoPlayer.1.2.1.0\lib\UAP10\Octane.Xam.VideoPlayer.UWP.dll</HintPath>
+    <Reference Include="Octane.Xam.VideoPlayer.UWP, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CommonLibs\Lib\Octane.Xam.VideoPlayer.1.2.1.0\lib\UAP10\Octane.Xam.VideoPlayer.UWP.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
