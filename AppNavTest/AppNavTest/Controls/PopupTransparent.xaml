@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppNavTest;assembly=AppNavTest"
+            BackgroundColor="White"
+             x:Class="AppNavTest.PopupTransparent">
+  <ContentPage.Padding >
+    <OnPlatform
+                    x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="0, 0"
+                    WinPhone="0, 0" />
+  </ContentPage.Padding>
+
+
+  <Grid RowSpacing="0" ColumnSpacing="0" x:Name="id1mainpagecontent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+    
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0"  Grid.Row="0"  Grid.Column="0" BackgroundColor="#2196F3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+     
+
+      <Image  Style="{StaticResource HeaderImageStyle}"  Source="{local:ImageResource AppNavTest.images.logo.png}"  Margin="10, 0, 0, 0" Grid.Column="1" Grid.Row="0" />
+      <Label  Style="{StaticResource HeaderLabelStyle}" Grid.Column="2" Grid.Row="0" XAlign="Start"   />
+  
+    </Grid>
+   
+
+    
+
+    <StackLayout Margin="10"  x:Name="layoutbody" Grid.Row="1"  Grid.Column="0"  >
+
+      <StackLayout  WidthRequest="300" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Style="{StaticResource MainMenuStackLayoutStyle}"  >
+
+
+        <Grid RowSpacing="0" ColumnSpacing="0" x:Name="id1mainpagecontent1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#AB000000" >
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <Label  BackgroundColor="#2196F3" TextColor="Yellow" FontAttributes="Bold"  Margin="0,2,0,0" Text="Video Gallery" Font="16 " Grid.Row="0"  Grid.Column="0" XAlign="Center" HorizontalOptions="Center" WidthRequest="300"></Label>
+
+
+          <ScrollView Grid.Row="1"  Grid.Column="0" VerticalOptions="CenterAndExpand">
+            <StackLayout Orientation ="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="1" WidthRequest="300" >
+              <Button x:Name="id01" BackgroundColor="#2196F3" TextColor="White"  Text="Video Home   >>" Font="16" Clicked="btn_clicked"   ></Button>
+              <Button  x:Name="id21" BackgroundColor="#2196F3" TextColor="White"   Text="Products        >>" Font="16" Clicked="btn_clicked" ></Button>
+              <Button  x:Name="id31" BackgroundColor="#2196F3" TextColor="White"   Text="Services         >>"  Clicked="btn_clicked" Font="16" ></Button>
+              <Button  x:Name="id41" BackgroundColor="#2196F3" TextColor="White"   Text="Corporate     >>" Font="16" Clicked="btn_clicked"  ></Button>
+              <Button  x:Name="id51" BackgroundColor="#2196F3" TextColor="White"   Text="Events           >>" Font="16" Clicked="btn_clicked"></Button>
+            </StackLayout>
+          </ScrollView>
+          <Button  x:Name="id55551" BackgroundColor="#2196F3" TextColor="Yellow"   Margin="0,10,0,0" Text="Close" Font="14" Clicked="btn_close" Grid.Row="2"  Grid.Column="0" HorizontalOptions="CenterAndExpand" WidthRequest="300"></Button>
+        </Grid>
+
+      </StackLayout>
+    </StackLayout>
+  </Grid>
+  
+  
+ 
+  
+</local:BaseContentPage>
+
+

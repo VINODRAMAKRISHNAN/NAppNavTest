@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppNavTest;assembly=AppNavTest"
+                       xmlns:localres="clr-namespace:AppNavTest;assembly=AppNavTest"
+             Title="Top Videos"
+             x:Class="AppNavTest.PageTop">
+  <ContentPage.Padding >
+    <OnPlatform
+                   x:TypeArguments="Thickness"
+                   iOS="0, 20, 0, 0"
+                   Android="0, 0"
+                   WinPhone="0, 0" />
+  </ContentPage.Padding>
+
+  <Grid RowSpacing="0" ColumnSpacing="0" x:Name="id1mainpagecontent">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="40" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0"  Grid.Row="0"  Grid.Column="0" BackgroundColor="#2196F3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <Image x:Name="idbackbutton" Style="{StaticResource HeaderImageStyle}"  Source="{local:ImageResource AppNavTest.images.left.png}"  Grid.Column="0" Grid.Row="0"  >
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+                  Tapped="btnbackbase_clicked"
+                  NumberOfTapsRequired="1" />
+        </Image.GestureRecognizers>
+      </Image>
+
+      <Image  Style="{StaticResource HeaderImageStyle}"  Source="{local:ImageResource AppNavTest.images.logo.png}"  Margin="10, 0, 0, 0" Grid.Column="1" Grid.Row="0" />
+      <Label  Style="{StaticResource HeaderLabelStyle}" Grid.Column="2" Grid.Row="0" XAlign="Start"   />
+      <Image x:Name="idmenubutton" Style="{StaticResource HeaderImageStyle}"  Source="{local:ImageResource AppNavTest.images.menu.png}"  Margin="5, 0, 5, 0" Grid.Column="3" Grid.Row="0" >
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+                  Tapped="btnmenubase_clicked"
+                  NumberOfTapsRequired="1" />
+        </Image.GestureRecognizers>
+      </Image>
+
+    </Grid>
+
+    <StackLayout    x:Name="layoutsubheading1" Grid.Row="1"  Grid.Column="0"  Style="{StaticResource SubHeaderStackLayoutStyle}"   >
+      <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+        <Grid.RowDefinitions >
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"  />
+        </Grid.ColumnDefinitions>
+        <Label Text="Top Viewed Videos"  Style="{StaticResource SubHeaderLabelStyle}"  Grid.Row="0"  Grid.Column="0" YAlign="Center" />
+      </Grid>
+    </StackLayout>
+
+    <BoxView   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" BackgroundColor="#2196F3" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+    <ActivityIndicator IsVisible="{Binding IsLoading}"  IsRunning="{Binding IsLoading}"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"  Style="{StaticResource ActivityIndicatorStyle}" />
+   
+    <StackLayout Margin="10"  Orientation="Horizontal" Grid.Row="2"  Grid.Column="0" >
+      <Label  Text="No video found !!"  TextColor="#FE8402"  IsVisible="{Binding ListPage.IsNoVideoVisible}"  />
+    </StackLayout>
+
+
+    <StackLayout Margin="10"  x:Name="layoutbody" Grid.Row="2"  Grid.Column="0"   >
+      <StackLayout VerticalOptions="FillAndExpand">
+        <ListView SeparatorVisibility="None"  HasUnevenRows="True"    ItemsSource="{Binding MVideoList}" ItemTapped="ListView_ItemTapped" >
+       
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell  >
+                <StackLayout  >
+                  <Grid RowSpacing="0" ColumnSpacing="0"   >
+                    <Grid.RowDefinitions >
+                      <RowDefinition Height="Auto" />
+                      <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"  />
+                      <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout WidthRequest="100" HeightRequest="100" Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" Padding="2,0,2,0" >
+                      <Image Source="{Binding ImgUrl}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                    </StackLayout >
+
+                    <StackLayout Grid.Row="0"  Grid.Column="1"  Padding="5,10,5,1" >
+                      <Label Text="{Binding DisplayName}"   FontSize="12"  VerticalOptions="CenterAndExpand"  TextColor="#41924B" />
+                    </StackLayout >
+
+                    <StackLayout Grid.Row="1"  Grid.Column="1" Padding="5,1,5,1" Orientation="Vertical" >
+                      <StackLayout  Orientation="Horizontal" >
+                        <Label Text="{Binding Description}"   FontSize="12"  />
+                      </StackLayout>
+
+                      <StackLayout  Orientation="Horizontal" >
+                        <Label Text="Uploaded: "   FontSize="12" />
+                        <Label Text="{Binding PublishedDate}"   FontSize="12"  TextColor="#FE8402" />
+                      </StackLayout>
+
+                    </StackLayout >
+                  </Grid>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+
+      </StackLayout>
+      <BoxView    BackgroundColor="#2196F3" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+      <StackLayout Style="{StaticResource FooterStackLayoutStyle}"   x:Name="layoutbodyfooter"  >
+        <Label Text="{Binding ListPage.NumberStatus}"  Font="12" ></Label>
+      </StackLayout>
+    </StackLayout>
+  </Grid>
+
+
+</local:BaseContentPage>

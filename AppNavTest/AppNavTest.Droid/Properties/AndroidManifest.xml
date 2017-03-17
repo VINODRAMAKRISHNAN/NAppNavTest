@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:versionCode="1" android:versionName="v1" package="App.Test.AppNavTest">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+	<uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" />
+	<uses-permission android:name="android.permission.READ_SOCIAL_STREAM" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<application android:label="AppNavTest" android:icon="@drawable/icon"></application>
+</manifest>

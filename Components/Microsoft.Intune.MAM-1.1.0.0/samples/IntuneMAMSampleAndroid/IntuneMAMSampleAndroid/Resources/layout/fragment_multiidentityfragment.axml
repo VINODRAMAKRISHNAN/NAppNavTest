@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MultiIdentityFragment"
+    tools:ignore="HardcodedText,Overdraw,RtlHardcoded">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip"
+        android:text="Current Identity:"
+        android:textIsSelectable="false" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dip">
+        <TextView
+            android:id="@+id/currentIdentityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:contentDescription="currentIdentityText"
+            android:singleLine="false"
+            android:text="NONE YET"
+            android:textIsSelectable="true" />
+    <!-- &#8634 is Anticlockwise Open Circle Arrow used as a Refresh button. -->
+        <Button
+            android:id="@+id/currentIdentityRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:contentDescription="currentIdentityRefreshButton"
+            android:text="↺"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_bright" />
+    </GridLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From:"
+        android:textIsSelectable="false" />
+    <RadioGroup
+        android:id="@+id/threadedIdentityOptionRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:checked="true"
+            android:text="Primary" />
+        <RadioButton
+            android:text="Worker Thread" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="With Identity:"
+        android:textIsSelectable="false" />
+    <RadioGroup
+        android:id="@+id/newIdentityRadioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/identityPrimaryRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="identityPrimaryRadioButton"
+            android:checked="true"
+            android:text="PrimaryUser Identity" />
+        <RadioButton
+            android:id="@+id/identityNewRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="identityNewRadioButton"
+            android:labelFor="@+id/newIdentity_text"
+            android:text="New Identity:" />
+        <EditText
+            android:id="@+id/newIdentity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="newIdentitytext"
+            android:ems="10"
+            android:inputType="text" />
+    </RadioGroup>
+    <LinearLayout
+        style="@android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/identitySetUIButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set UI" />
+        <Button
+            android:id="@+id/identityClearUIButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear UI" />
+        <Button
+            android:id="@+id/identityLaunchButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Launch" />
+    </LinearLayout>
+    <LinearLayout
+        style="@android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/identitySetThreadButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Thread" />
+        <Button
+            android:id="@+id/identityClearThreadButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Thread" />
+    </LinearLayout>
+    <LinearLayout
+        style="@android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/identitySetProcessButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Process" />
+        <Button
+            android:id="@+id/identityClearProcessButton"
+            style="@android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Process" />
+    </LinearLayout>
+</LinearLayout>

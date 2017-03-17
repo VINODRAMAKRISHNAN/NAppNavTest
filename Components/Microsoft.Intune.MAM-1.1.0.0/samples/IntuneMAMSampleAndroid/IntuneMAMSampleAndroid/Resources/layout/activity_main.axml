@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/copyTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/copyText"
+                    android:text="Copy" />
+                <EditText
+                    android:id="@+id/copyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="copyText"
+                    android:inputType="textMultiLine"
+                    android:text="@string/ApplicationName" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/pasteTextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paste" />
+                <TextView
+                    android:id="@+id/pasteText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="pasteText"
+                    android:singleLine="false"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/showIdentityOptionsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show Identity Options" />
+            <FrameLayout
+                android:id="@+id/identityFragmentHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <fragment
+                    android:id="@+id/identityFragment"
+                    android:name="IntuneMAMSampleAndroid.MultiIdentityFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+            <Button
+                android:id="@+id/showContentProviderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show Content Provider Buttons" />
+            <LinearLayout
+                android:id="@+id/fragmentHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+            <Button
+                android:id="@+id/copyIntentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickCopyIntent"
+                android:text="Copy Intent" />
+            <Button
+                android:id="@+id/pasteIntentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickPasteIntent"
+                android:text="Paste Intent" />
+            <Button
+                android:id="@+id/sendIntentButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClickActionSend"
+                android:text="Send Intent" />
+            <Button
+                android:id="@+id/returnResultButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reply to Intent" />
+            <Button
+                android:id="@+id/httpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ActionView HTTP" />
+            <Button
+                android:id="@+id/saveAsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save As" />
+            <Button
+                android:id="@+id/write5kToFileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Write 5K to file" />
+            <Button
+                android:id="@+id/readFromFileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read from file" />
+        </LinearLayout>
+    <!-- Status indicator checkboxes -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/isDebuggableCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/checkboxLabelDebuggable" />
+            <CheckBox
+                android:id="@+id/isTestOnlyCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/checkboxLabelTestOnly" />
+            <CheckBox
+                android:id="@+id/isMultiIdentityCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/checkboxLabelMultiIdentity" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

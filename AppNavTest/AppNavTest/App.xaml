@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:AppNavTest;assembly=AppNavTest"
+             x:Class="AppNavTest.App">
+
+  <Application.Resources>
+   
+
+   
+    <OnPlatform x:TypeArguments="ResourceDictionary">
+      <OnPlatform.iOS>
+        <ResourceDictionary>
+          <Style x:Key="ActivityIndicatorStyle" TargetType="ActivityIndicator">
+            <Setter Property="Color" Value="Black"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+          </Style>
+          
+          <Style x:Key="MainMenuStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="HeightRequest" Value="350"/>
+          </Style>
+          
+          <Style x:Key="HeaderStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="HeightRequest" Value="40"/>
+          </Style>
+          <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="Margin" Value="3, 0, 0, 0"/>
+            <Setter Property="Text" Value="HPE Video Gallery"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          <Style x:Key="HeaderImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="WidthRequest" Value="20"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+
+          <Style x:Key="HeaderImageStyleVideoStart" TargetType="Image">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="WidthRequest" Value="40"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+         
+
+
+            <Style x:Key="SubHeaderStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+          </Style>
+          <Style x:Key="SubHeaderLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+          </Style>
+
+          <Style x:Key="SubHeaderEntryStyle" TargetType="Entry">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="TextColor" Value="#41924B"/>
+            <Setter Property="HeightRequest" Value="16"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+            <Setter Property="FontSize" Value="16"/>
+          </Style>
+          <Style x:Key="SubHeaderButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5,3,0,3"/>
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="HeightRequest" Value="28"/>
+            <Setter Property="BorderRadius" Value="4"/>
+           
+          </Style>
+          <Style x:Key="FooterStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HeightRequest" Value="40"/>
+          </Style>
+        </ResourceDictionary>
+      </OnPlatform.iOS>
+      
+      <OnPlatform.Android>
+        <ResourceDictionary>
+          <Style x:Key="ActivityIndicatorStyle" TargetType="ActivityIndicator">
+            <Setter Property="Color" Value="Black"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+          </Style>
+
+          <Style x:Key="MainMenuStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="HeightRequest" Value="400"/>
+          </Style>
+          <Style x:Key="HeaderStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="HeightRequest" Value="20"/>
+          </Style>
+          <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="Margin" Value="3, 0, 0, 0"/>
+            <Setter Property="Text" Value="HPE Video Gallery"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          <Style x:Key="HeaderImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="20"/>
+            <Setter Property="WidthRequest" Value="20"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          <Style x:Key="HeaderImageStyleVideoStart" TargetType="Image">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="WidthRequest" Value="40"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          <Style x:Key="SubHeaderStackLayoutStyle" TargetType="StackLayout">
+           
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+          </Style>
+          <Style x:Key="SubHeaderLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+          </Style>
+
+          
+          <Style x:Key="SubHeaderEntryStyle" TargetType="Entry">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="TextColor" Value="#41924B"/>
+            <Setter Property="HeightRequest" Value="35"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+            <Setter Property="FontSize" Value="14"/>
+          </Style>
+          <Style x:Key="SubHeaderButtonStyle" TargetType="Button">
+         
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Start"/>
+             <Setter Property="BorderRadius" Value="8"/>
+          </Style>
+          <Style x:Key="FooterStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="0"/>
+          </Style>
+        </ResourceDictionary>
+      </OnPlatform.Android>
+      
+      <OnPlatform.WinPhone>
+        <ResourceDictionary>
+          <Style x:Key="ActivityIndicatorStyle" TargetType="ActivityIndicator">
+            <Setter Property="Color" Value="Black"/>
+            <Setter Property="Margin" Value="0,30,0,0"/>
+          </Style>
+
+          <Style x:Key="MainMenuStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="HeightRequest" Value="300"/>
+          </Style>
+          <Style x:Key="HeaderStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="HeightRequest" Value="20"/>
+          </Style>
+          <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="Margin" Value="3, 0, 5, 0"/>
+            <Setter Property="Text" Value="HPE Video Gallery"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          
+          <Style x:Key="HeaderImageStyle" TargetType="Image">
+            <Setter Property="HeightRequest" Value="15"/>
+            <Setter Property="WidthRequest" Value="15"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+          <Style x:Key="HeaderImageStyleVideoStart" TargetType="Image">
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="WidthRequest" Value="40"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+          </Style>
+
+          <Style x:Key="SubHeaderStackLayoutStyle" TargetType="StackLayout">
+         
+            <Setter Property="Orientation" Value="Horizontal"/>  
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="5"/>
+          </Style>
+          <Style x:Key="SubHeaderLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+          </Style>
+
+          <Style x:Key="SubHeaderEntryStyle" TargetType="Entry">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="TextColor" Value="#41924B"/>
+            <Setter Property="HeightRequest" Value="35"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+            <Setter Property="FontSize" Value="14"/>
+          </Style>
+          
+          <Style x:Key="SubHeaderButtonStyle" TargetType="Button">
+            <Setter Property="HeightRequest" Value="30"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="BorderRadius" Value="6"/>
+          </Style>
+          <Style x:Key="FooterStackLayoutStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Margin" Value="0,-5,0,10"/>
+            <Setter Property="Padding" Value="0"/>
+          </Style>
+        </ResourceDictionary>
+      </OnPlatform.WinPhone>
+    </OnPlatform>
+    
+
+  </Application.Resources>
+ 
+</Application >

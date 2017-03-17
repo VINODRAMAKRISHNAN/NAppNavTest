@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">MicrosoftIntuneMAMSampleAndroid</string>
+    <string name="checkboxLabelDebuggable">Debuggable</string>
+    <string name="checkboxLabelTestOnly">TestOnly</string>
+    <string name="checkboxLabelMultiIdentity">MultiIdentity</string>
+    <string name="btn_show_identity_options">Show Identity Options</string>
+    <string name="btn_hide_identity_options">Hide Identity Options</string>
+</resources>
