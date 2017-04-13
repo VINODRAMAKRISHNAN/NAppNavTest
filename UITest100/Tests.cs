@@ -28,48 +28,53 @@ namespace UITest100
        
 
 
-
-
         [Test]
         public void NewTest()
         {
             try
             {
 
-                app.Screenshot("Video Home >> Goto >> Featured");
+                app.Screenshot("Video Home");
                 app.WaitForElement(x => x.Text("New"));
                 app.Tap(c => c.Marked("Featured"));
-                app.Screenshot("FeaturedVideos >> Goto >> MainMenu");
+                app.Screenshot("Featured Videos");
 
                 app.Tap(x => x.Class("FormsImageView").Index(2));
-                app.Screenshot("MainMenu >> Goto >> Products");
+                app.Screenshot("MainMenu >> Navigate to >> Products");
                 app.Tap(c => c.Marked("Products        >>"));
                 app.WaitForElement(x => x.Text("New"));
-                app.Screenshot("Products >> Goto >> MainMenu");
+                app.Screenshot("Products");
 
                 app.Tap(x => x.Class("FormsImageView").Index(1));
-                app.Screenshot("MainMenu >> Goto >> Services");
+                app.Screenshot("MainMenu >> Navigate to >> Services");
                 app.Tap(c => c.Marked("Services         >>"));
                 app.WaitForElement(x => x.Text("New"));
-                app.Screenshot("Services >> Goto >> MainMenu");
+                app.Screenshot("Services");
 
                 app.Tap(x => x.Class("FormsImageView").Index(1));
-                app.Screenshot("MainMenu >> Goto >> Corporate");
+                app.Screenshot("MainMenu >> Navigate to >> Corporate");
                 app.Tap(c => c.Marked("Corporate     >>"));
                 app.WaitForElement(x => x.Text("New"));
-                app.Screenshot("Screenshot6-Corporate");
+                app.Screenshot("Corporate");
 
                 app.Tap(x => x.Class("FormsImageView").Index(1));
-                app.Screenshot("MainMenu >> Goto >> Events");
+                app.Screenshot("MainMenu >> Navigate to >> Events");
                 app.Tap(c => c.Marked("Events           >>"));
                 app.WaitForElement(x => x.Text("New"));
-                app.Screenshot("Events >> Goto >> MainMenu");
+                app.Screenshot("Events");
 
                 app.Tap(x => x.Class("FormsImageView").Index(1));
-                app.Screenshot("MainMenu >> Goto >> Video Home");
+                app.Screenshot("MainMenu >> Navigate to >> Video Home");
                 app.Tap(c => c.Marked("Video Home   >>"));
                 app.WaitForElement(x => x.Text("New"));
-                app.Screenshot("Back to Video Home >> THE END");
+                app.Screenshot("Video Home");
+                
+                app.Tap(x => x.Class("FormsImageView").Index(5));
+                app.WaitForElement(x => x.Text("Return"));
+                app.Screenshot("Selected Video Playing");
+                //app.Tap(x => x.Class("Platform_DefaultRenderer").Index(10));
+                app.Tap(x => x.Marked("Return"));
+                app.Screenshot("Back to Video Home");
 
                 Assert.True(true);
             }

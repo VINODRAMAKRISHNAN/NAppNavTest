@@ -104,14 +104,16 @@
                       <Label Text="{Binding DisplayName}"   FontSize="12"  VerticalOptions="CenterAndExpand"  TextColor="#41924B" />
                     </StackLayout >
 
-                    <StackLayout Grid.Row="1"  Grid.Column="1" Padding="5,1,5,1" Orientation="Vertical" >
-                      <StackLayout  Orientation="Horizontal" >
-                        <Label Text="{Binding Description}"   FontSize="12"  />
+                    <StackLayout Grid.Row="1"  Grid.Column="1" Padding="5,1,5,5" Orientation="Vertical" >
+                      <StackLayout  Orientation="Vertical" Padding="0,0,0,0">
+                        <Label Text="{Binding Description}"   FontSize="12" VerticalOptions="CenterAndExpand" />
                       </StackLayout>
 
-                      <StackLayout  Orientation="Horizontal" >
+                      <StackLayout  Orientation="Vertical" Padding="0,0,0,20">
+                        <StackLayout  Orientation="Horizontal" >
                         <Label Text="Uploaded: "   FontSize="12" />
                         <Label Text="{Binding PublishedDate}"   FontSize="12"  TextColor="#FE8402" />
+                        </StackLayout>
                       </StackLayout>
 
                     </StackLayout >
